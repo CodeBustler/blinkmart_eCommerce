@@ -34,45 +34,65 @@ function CategoryContainer({ title, category }) {
 	return (
 		<div className="bg-white rounded shadow p-5">
 			<h2 className="font-semibold text-xl">{title}</h2>
-			<div className="flex justify-center my-5">
+			<div className="flex justify-center gap-5 my-5">
 				<div>
-					{category[4] && (
-						<img
-							src={category[4].img1}
-							alt=""
-							className="w-[170px] h-[170px] object-contain border p-5 cursor-pointer"
-							onClick={() => handleNavigate(category[4].id)}
-							title={category[4].title}
-						/>
+					{category[7] && (
+						<>
+							<img
+								src={category[7].img1}
+								alt=""
+								className="w-[160px] h-[160px] object-contain cursor-pointer mt-2 hover:scale-105 transition"
+								onClick={() => handleNavigate(category[7].id)}
+								title={category[7].title}
+							/>
+							<div className="capitalize text-center text-gray-500 text-sm">
+								{category[7].title}
+							</div>
+						</>
 					)}
 					{category[1] && (
-						<img
-							src={category[1].img1}
-							alt=""
-							className="w-[170px] h-[170px] object-contain border p-5 cursor-pointer"
-							onClick={() => handleNavigate(category[1].id)}
-							title={category[1].title}
-						/>
+						<>
+							<img
+								src={category[1].img1}
+								alt=""
+								className="w-[160px] h-[160px] object-contain cursor-pointer mt-2 hover:scale-105 transition"
+								onClick={() => handleNavigate(category[1].id)}
+								title={category[1].title}
+							/>
+							<div className="capitalize text-center text-gray-500 text-sm">
+								{category[1].title}
+							</div>
+						</>
 					)}
 				</div>
 				<div>
 					{category[2] && (
-						<img
-							src={category[2].img1}
-							alt=""
-							className="w-[170px] h-[170px]  object-contain border p-5 cursor-pointer"
-							onClick={() => handleNavigate(category[2].id)}
-							title={category[2].title}
-						/>
-					)}
+						<>
+							<img
+								src={category[2].img1}
+								alt=""
+								className="w-[160px] h-[160px] object-contain cursor-pointer mt-2 hover:scale-105 transition"
+								onClick={() => handleNavigate(category[2].id)}
+								title={category[2].title}
+							/>
+							<div className="capitalize text-center text-gray-500 text-sm">
+								{category[2].title}
+							</div>
+						</>
+					)}{" "}
 					{category[3] && (
-						<img
-							src={category[3].img1}
-							alt=""
-							className="w-[170px] h-[170px] object-contain border p-5 cursor-pointer"
-							onClick={() => handleNavigate(category[3].id)}
-							title={category[3].title}
-						/>
+						<>
+							<img
+								src={category[3].img1}
+								alt=""
+								className="w-[160px] h-[160px] object-contain cursor-pointer mt-2 hover:scale-105 transition"
+								onClick={() => handleNavigate(category[3].id)}
+								title={category[3].title}
+							/>
+							<div className="capitalize text-center text-gray-500 text-sm">
+								{category[3].title}
+							</div>
+						</>
 					)}
 				</div>
 			</div>
