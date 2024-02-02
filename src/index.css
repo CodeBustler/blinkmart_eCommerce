@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	scroll-behavior: smooth;
+}
+
+.active {
+	color: orange;
+	font-weight: 500;
+}
+
+.underline-heading {
+	text-decoration-color: orange;
+}
+
+/*NAVBAR FIRST ROW : ADDED EXTRA OPTIONS FOR LOGOUT*/
+.logoutBTN::before {
+	content: "";
+	position: absolute;
+	top: -30px;
+	border: 20px solid;
+	transform: translateX(300%);
+	z-index: 2;
+	border-color: #0000 #0000 #fff #0000;
+}
+
+.image-animate {
+	animation: jump infinite 1s alternate;
+}
+
+@keyframes jump {
+	0% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(10px);
+	}
+}
