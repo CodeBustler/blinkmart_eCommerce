@@ -21,10 +21,19 @@ function HomePage() {
 	const programmingBooks = filterProductsBySubCategory("books_programming");
 	const devotionalBooks = filterProductsBySubCategory("books_devotional");
 	const comicBooks = filterProductsBySubCategory("books_comics");
+	const mensJackets = filterProductsBySubCategory("mens_jackets");
+	const kidsCloth = filterProductsBySubCategory("kids_cloth");
+	const kidsFootwear = filterProductsBySubCategory("kids_footwear");
+	const womensFootwear = filterProductsBySubCategory("womens_footwear");
+	const womensDresses = filterProductsBySubCategory("womens_dresses");
+	const womensTops = filterProductsBySubCategory("womens_tops");
+	const jewelleryGold = filterProductsBySubCategory("jewellery_gold");
+	const jewellerySilver = filterProductsBySubCategory("jewellery_silver");
 
 	return (
 		<div className="bg-gray-200">
 			<ImageSlider />
+
 			{/*PRODUCTS CONTAINER */}
 			<div className="container mx-auto relative -top-36">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
@@ -36,7 +45,7 @@ function HomePage() {
 					<CategoryContainer title={"Laptops"} category={laptops} />
 					<CategoryContainer title={"Tablets"} category={tablets} />
 					<CategoryContainer
-						title={"Mens Footwear"}
+						title={"Men's Footwear"}
 						category={mensFootwear}
 					/>
 					<CategoryContainer
@@ -45,6 +54,7 @@ function HomePage() {
 					/>
 				</div>
 			</div>
+
 			{/*LATEST PRODUCTS*/}
 			<div className="container mx-auto p-4 md:p-0 relative -top-36">
 				<ContainerForCard
@@ -56,6 +66,7 @@ function HomePage() {
 					))}
 				</ContainerForCard>
 			</div>
+
 			{/*PRODUCTS CONTAINER */}
 			<div className="container mx-auto relative -top-28 ">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
@@ -63,17 +74,29 @@ function HomePage() {
 						title={"Comic Books"}
 						category={comicBooks}
 					/>
-					<CategoryContainer title={"Jewellery"} category={laptops} />
 					<CategoryContainer
-						title={"Womens Dresses"}
-						category={mensShirts}
+						title={"Kid's Cloths"}
+						category={kidsCloth}
 					/>
 					<CategoryContainer
-						title={"Womens Footwear"}
-						category={mensShirts}
+						title={"Kid's Footwear"}
+						category={kidsFootwear}
+					/>
+					<CategoryContainer
+						title={"Men's Jackets"}
+						category={mensJackets}
+					/>
+					<CategoryContainer
+						title={"Women's Dresses"}
+						category={womensDresses}
+					/>
+					<CategoryContainer
+						title={"Women's Tops"}
+						category={womensTops}
 					/>
 				</div>
 			</div>
+
 			{/*LATEST PRODUCTS*/}
 			<div className="container mx-auto p-4 md:p-0 relative -top-28">
 				<ContainerForCard
@@ -84,6 +107,24 @@ function HomePage() {
 						<ProductCard item={item} />
 					))}
 				</ContainerForCard>
+			</div>
+
+			{/*PRODUCTS CONTAINER */}
+			<div className="container mx-auto relative -top-16 ">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
+					<CategoryContainer
+						title={"Women's Footwear"}
+						category={womensFootwear}
+					/>
+					<CategoryContainer
+						title={"Jewellery Gold"}
+						category={jewelleryGold}
+					/>
+					<CategoryContainer
+						title={"Jewellery Silver"}
+						category={jewellerySilver}
+					/>
+				</div>
 			</div>
 		</div>
 	);

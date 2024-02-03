@@ -186,13 +186,13 @@ function SideBar({
 							</Link>
 							<ul className="flex flex-col leading-8">
 								<NavLink
-									to="/ProductsSubCategory/womens_dress"
+									to="/ProductsSubCategory/womens_dresses"
 									onClick={handleSideBar}
 								>
 									Dresses
 								</NavLink>
 								<NavLink
-									to="/ProductsSubCategory/womens_top"
+									to="/ProductsSubCategory/womens_tops"
 									onClick={handleSideBar}
 								>
 									Tops western

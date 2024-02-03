@@ -37,7 +37,7 @@ function ProductsSubCategory() {
 				) : (
 					<div className="container mx-auto ">
 						<div
-							className={`flex flex-wrap mt-10 gap-5 ${
+							className={`flex flex-wrap mt-10 gap-5  ${
 								subCategoryItems.length < 4
 									? "justify-center md:justify-start"
 									: "justify-center md:justify-start"

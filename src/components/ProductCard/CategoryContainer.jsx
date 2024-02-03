@@ -98,7 +98,7 @@ function CategoryContainer({ title, category }) {
 			</div>
 			<Link
 				to={`/ProductsSubCategory/${category[0].subCategory}`}
-				className="text-blue-400 font-semibold"
+				className="text-blue-500 font-semibold"
 			>
 				See more...
 			</Link>
