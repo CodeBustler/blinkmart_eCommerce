@@ -1,4 +1,4 @@
-// ROUTER
+import React, { lazy, Suspense } from "react";
 import {
 	Navigate,
 	Route,
@@ -6,26 +6,37 @@ import {
 	createRoutesFromElements,
 } from "react-router-dom";
 
-// COMPONENTS & PAGES
+// LOADER COMPONENT
+import Loader from "../components/Utilities/Loader";
+
 import RootLayout from "./RootLayout";
 import HomePage from "../Pages/HomePage";
-import ProductDetail from "../components/Products/ProductDetail";
-import ProductsCategory from "../components/Products/ProductsCategory";
-import ProductsSubCategory from "../components/Products/ProductsSubCategory";
-import NoPage from "../Pages/NoPage";
-import Dashboard from "../components/Dashboard/Dashboard";
-import AddProduct from "../components/Dashboard/AddProduct";
-import SignUp from "../components/Authentication/SignUp";
-import Login from "../components/Authentication/Login";
-import Cart from "../components/Cart/Cart";
-import CustomerService from "../Pages/CustomerService";
-import Orders from "../components/Orders/orders";
-import UserDetail from "../components/UserDetail/UserDetail";
-import UpdateProduct from "../components/Dashboard/UpdateProduct";
-import SearchProducts from "../components/Products/SearchProducts";
-// ------------------------------------------------------
-// **************** PROTECT ROUTES ****************
-// ------------------------------------------------------
+
+// LAZY LOAD COMPONENTS & PAGES
+const ProductDetail = lazy(
+	() => import("../components/Products/ProductDetail"),
+);
+const ProductsCategory = lazy(
+	() => import("../components/Products/ProductsCategory"),
+);
+const ProductsSubCategory = lazy(
+	() => import("../components/Products/ProductsSubCategory"),
+);
+const NoPage = lazy(() => import("../Pages/NoPage"));
+const Dashboard = lazy(() => import("../components/Dashboard/Dashboard"));
+const AddProduct = lazy(() => import("../components/Dashboard/AddProduct"));
+const SignUp = lazy(() => import("../components/Authentication/SignUp"));
+const Login = lazy(() => import("../components/Authentication/Login"));
+const Cart = lazy(() => import("../components/Cart/Cart"));
+const CustomerService = lazy(() => import("../Pages/CustomerService"));
+const Orders = lazy(() => import("../components/Orders/orders"));
+const UserDetail = lazy(() => import("../components/UserDetail/UserDetail"));
+const UpdateProduct = lazy(
+	() => import("../components/Dashboard/UpdateProduct"),
+);
+const SearchProducts = lazy(
+	() => import("../components/Products/SearchProducts"),
+);
 
 // PROTECTED ROUTE FOR USER
 const ProtectedRoute = ({ children }) => {
@@ -50,74 +61,148 @@ const ProtectedRouteForAdmin = ({ children }) => {
 	}
 };
 
-// ------------------------------------------------------
-// **************** ROUTES FOR ROUTER ****************
-// ------------------------------------------------------
 const routes = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
-			<Route path="/" element={<RootLayout />}>
-				<Route index element={<HomePage />} />
+			<Route
+				path="/"
+				element={
+					<Suspense fallback={<Loader />}>
+						<RootLayout />
+					</Suspense>
+				}
+			>
+				<Route
+					index
+					element={
+						<Suspense fallback={<Loader />}>
+							<HomePage />
+						</Suspense>
+					}
+				/>
 				<Route
 					path="/cart"
 					element={
-						<ProtectedRoute>
-							<Cart />
-						</ProtectedRoute>
+						<Suspense fallback={<Loader />}>
+							<ProtectedRoute>
+								<Cart />
+							</ProtectedRoute>
+						</Suspense>
 					}
 				/>
 				<Route
 					path="/productDetail/:productId"
-					element={<ProductDetail />}
+					element={
+						<Suspense fallback={<Loader />}>
+							<ProductDetail />
+						</Suspense>
+					}
 				/>
 				<Route
 					path="/ProductsCategory/:categoryName"
-					element={<ProductsCategory />}
+					element={
+						<Suspense fallback={<Loader />}>
+							<ProductsCategory />
+						</Suspense>
+					}
 				/>
 				<Route
 					path="/ProductsSubCategory/:subCategoryName"
-					element={<ProductsSubCategory />}
+					element={
+						<Suspense fallback={<Loader />}>
+							<ProductsSubCategory />
+						</Suspense>
+					}
 				/>
-				<Route path="/customer_service" element={<CustomerService />} />
-				<Route path="/orders" element={<Orders />} />
+				<Route
+					path="/customer_service"
+					element={
+						<Suspense fallback={<Loader />}>
+							<CustomerService />
+						</Suspense>
+					}
+				/>
+				<Route
+					path="/orders"
+					element={
+						<Suspense fallback={<Loader />}>
+							<Orders />
+						</Suspense>
+					}
+				/>
 				<Route
 					path="/user_detail"
 					element={
-						<ProtectedRoute>
-							<UserDetail />
-						</ProtectedRoute>
+						<Suspense fallback={<Loader />}>
+							<ProtectedRoute>
+								<UserDetail />
+							</ProtectedRoute>
+						</Suspense>
 					}
 				/>
-				<Route path="/searchResults" element={<SearchProducts />} />
+				<Route
+					path="/searchResults"
+					element={
+						<Suspense fallback={<Loader />}>
+							<SearchProducts />
+						</Suspense>
+					}
+				/>
 			</Route>
-			<Route path="/*" element={<NoPage />} />
+			<Route
+				path="/*"
+				element={
+					<Suspense fallback={<Loader />}>
+						<NoPage />
+					</Suspense>
+				}
+			/>
 			<Route
 				path="/dashboard"
 				element={
-					<ProtectedRouteForAdmin>
-						<Dashboard />
-					</ProtectedRouteForAdmin>
+					<Suspense fallback={<Loader />}>
+						<ProtectedRouteForAdmin>
+							<Dashboard />
+						</ProtectedRouteForAdmin>
+					</Suspense>
 				}
 			/>
 			<Route
 				path="/addProduct"
 				element={
-					<ProtectedRouteForAdmin>
-						<AddProduct />
-					</ProtectedRouteForAdmin>
+					<Suspense fallback={<Loader />}>
+						<ProtectedRouteForAdmin>
+							<AddProduct />
+						</ProtectedRouteForAdmin>
+					</Suspense>
 				}
 			/>
 			<Route
 				path="/updateProduct/:productId"
 				element={
-					<ProtectedRouteForAdmin>
-						<UpdateProduct />
-					</ProtectedRouteForAdmin>
+					<Suspense fallback={<Loader />}>
+						<ProtectedRouteForAdmin>
+							<UpdateProduct />
+						</ProtectedRouteForAdmin>
+					</Suspense>
 				}
 			/>
-
-			<Route path="/signup" element={<SignUp />} />
-			<Route path="/login" element={<Login />} />
+			<Route
+				path="/signup"
+				element={
+					<Suspense fallback={<Loader />}>
+						<SignUp />
+					</Suspense>
+				}
+			/>
+			<Route
+				path="/login"
+				element={
+					<Suspense fallback={<Loader />}>
+						<Login />
+					</Suspense>
+				}
+			/>
 		</Route>,
 	),
 );
