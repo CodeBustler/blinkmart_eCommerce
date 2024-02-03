@@ -14,7 +14,6 @@ import { FaBagShopping } from "react-icons/fa6";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import emptyCart from "../../assets/empty_cart.jpg";
-
 // ---------------------------------------------------------------
 
 function Cart() {
@@ -25,6 +24,7 @@ function Cart() {
 	const [scrollY, setScrollY] = useState(0);
 	const [isRemovigItem, setRemovingItem] = useState(false);
 	const navigateTo = useNavigate();
+
 	// ------------------------------------------------------
 	// ***************** DELETE CART ITEM *****************
 	// ------------------------------------------------------
@@ -193,7 +193,7 @@ function Cart() {
 						</span>
 					</div>
 					<section className="">
-						<div className="flex flex-col-reverse  md:flex-row items-center md:items-start justify-center p-1 px-5 ">
+						<div className="flex flex-col-reverse  md:flex-row items-center md:items-start justify-center p-1 px-5 md:px-8 ">
 							<div className="w-full md:w-2/3 ">
 								{userCartDetails.map((item, index) => (
 									<div

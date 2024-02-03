@@ -13,16 +13,13 @@ import ProductsTable from "./tableData/ProductsTable";
 import UsersTable from "./tableData/UsersTable";
 // ROUTER
 import { Link, useNavigate } from "react-router-dom";
-import { scrollToTop } from "../utilities/RequiredFunctions";
-import { FaAnglesLeft } from "react-icons/fa6";
-
+import TapToTop from "../Utilities/TapToTop";
 // --------------------------------------------------------
 
 function Dashboard() {
 	const [selectedButton, setSelectedButton] = useState("products");
 	const { admin, allProducts, userDB } = useContext(MyContext);
 	const [searchBarFocus, setSearchBarFocus] = useState(false);
-	const [scrollTop, setScrollTop] = useState(0);
 
 	const navigate = useNavigate();
 
@@ -47,24 +44,11 @@ function Dashboard() {
 	};
 
 	// --------------------------------------------------------
-
-	const handleScroll = () => {
-		setScrollTop(window.scrollY);
-	};
-
-	useEffect(() => {
-		window.addEventListener("scroll", handleScroll);
-
-		//WHEN COMPONENT UNMOUNTS
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
-	// --------------------------------------------------------
 	return (
 		<>
 			<NavbarForAdmin />
 
+			{/*DASHBOARD OVERVIEW*/}
 			<div className="m-5 relative ">
 				<h1
 					className={`text-2xl font-bold my-3 text-center md:text-left ${
@@ -123,7 +107,7 @@ function Dashboard() {
 						</div>
 					</div>
 				</div>
-
+				// --------------------------------------------------------
 				{/*CONDITIONAL RENDERING*/}
 				<div
 					className={`flex items-center justify-between md:justify-center flex-wrap gap-2  bg-white py-3 w-full mb-4 ${
@@ -153,18 +137,9 @@ function Dashboard() {
 						<FaListUl /> Users
 					</Link>
 				</div>
-
 				{renderComponents()}
 			</div>
-
-			{/*FOOTER*/}
-
-			{scrollTop > 700 && (
-				<FaAnglesLeft
-					className="rotate-90 w-10 h-10 bg-orange-500 p-3 rounded-full shadow-xl fixed bottom-10 right-10 z-50 cursor-pointer text-white opacity-40 hover:opacity-100 hover:scale-125 transition"
-					onClick={scrollToTop}
-				/>
-			)}
+			<TapToTop />
 		</>
 	);
 }

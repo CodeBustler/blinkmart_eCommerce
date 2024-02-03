@@ -6,7 +6,7 @@ import ProductCard from "../ProductCard/ProductCard";
 
 function SearchProducts() {
 	const { allProducts, searchResult, searchError } = useContext(MyContext);
-	// ---------------------------------------------------
+
 	return (
 		<>
 			{searchResult.length > 0 ? (

@@ -4,6 +4,7 @@ import profile_avatar from "../../../assets/profile_avatar.png";
 function UsersTable({ userDB }) {
 	const env = import.meta.env;
 	const adminEmail = env.VITE_REACT_APP_ADMIN_EMAIL;
+	// ---------------------------------------------------------------
 
 	return (
 		<>

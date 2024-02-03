@@ -1,17 +1,23 @@
-import React, { useContext } from "react";
-import hero from "../assets/desktop_hero/hero1.jpg";
-import CategoryContainer from "../components/ProductCard/CategoryContainer";
-import ImageSlider from "../components/Utilities/ImageSlider";
+import { useContext, useEffect, useState } from "react";
 import { MyContext } from "../App";
+// COMPONENTS
+import CategoryContainer from "../components/ProductCard/CategoryContainer";
 import ContainerForCard from "../components/ProductCard/ContainerForCard";
 import ProductCard from "../components/ProductCard/ProductCard";
+// UTILITIES
+import ImageSlider from "../components/Utilities/ImageSlider";
+// ------------------------------------------------
 
 function HomePage() {
 	const { allProducts } = useContext(MyContext);
 
+	// --------------------------------------------------
+	// ********** FUNCTION FILTERING PRODUCTS **********
+	// --------------------------------------------------
 	const filterProductsBySubCategory = (subCategory) =>
 		allProducts.filter((product) => product.subCategory === subCategory);
 
+	// FILTERED PRODUCTS
 	const mobiles = filterProductsBySubCategory("mobiles");
 	const laptops = filterProductsBySubCategory("laptops");
 	const tablets = filterProductsBySubCategory("tablets");
@@ -29,12 +35,12 @@ function HomePage() {
 	const womensTops = filterProductsBySubCategory("womens_tops");
 	const jewelleryGold = filterProductsBySubCategory("jewellery_gold");
 	const jewellerySilver = filterProductsBySubCategory("jewellery_silver");
+	// ------------------------------------------------
 
 	return (
 		<div className="bg-gray-200">
 			<ImageSlider />
-
-			{/*PRODUCTS CONTAINER */}
+			{/*MAIN CONTAINER */}
 			<div className="container mx-auto relative -top-36">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
 					<CategoryContainer title={"Mobiles"} category={mobiles} />
@@ -54,8 +60,7 @@ function HomePage() {
 					/>
 				</div>
 			</div>
-
-			{/*LATEST PRODUCTS*/}
+			{/*ROW CONTAINER*/}
 			<div className="container mx-auto p-4 md:p-0 relative -top-36">
 				<ContainerForCard
 					containerTitle={"Smart Watches"}
@@ -66,8 +71,7 @@ function HomePage() {
 					))}
 				</ContainerForCard>
 			</div>
-
-			{/*PRODUCTS CONTAINER */}
+			{/*MAIN CONTAINER */}
 			<div className="container mx-auto relative -top-28 ">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
 					<CategoryContainer
@@ -96,8 +100,7 @@ function HomePage() {
 					/>
 				</div>
 			</div>
-
-			{/*LATEST PRODUCTS*/}
+			{/*ROW CONTAINER*/}
 			<div className="container mx-auto p-4 md:p-0 relative -top-28">
 				<ContainerForCard
 					containerTitle={"Devotional Books"}
@@ -108,8 +111,7 @@ function HomePage() {
 					))}
 				</ContainerForCard>
 			</div>
-
-			{/*PRODUCTS CONTAINER */}
+			{/*MAIN CONTAINER */}
 			<div className="container mx-auto relative -top-16 ">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
 					<CategoryContainer

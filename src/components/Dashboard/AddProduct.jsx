@@ -9,7 +9,6 @@ import NavbarForAdmin from "../Navbar/NavbarForAdmin";
 // FIREBASE
 import { addDoc, collection } from "firebase/firestore";
 import { fireDB } from "../../firebaseConfig/firebase";
-
 // ------------------------------------------------------
 
 function AddProduct() {
@@ -80,6 +79,8 @@ function AddProduct() {
 		}
 	};
 
+	// ------------------------------------------------------
+
 	// HANDLE ADD-PRODUCT FORM RESET
 	const handleReset = () => {
 		setProduct({
@@ -102,6 +103,8 @@ function AddProduct() {
 
 		setErrorMsg("");
 	};
+
+	// ------------------------------------------------------
 
 	const categoryOptions = [
 		{ value: "electronics_and_devices", label: "Electronics & Devices" },
@@ -162,8 +165,6 @@ function AddProduct() {
 		}));
 	};
 
-	const allP = allProducts.every((product) => "quantity" in product);
-	console.log(allP);
 	// ------------------------------------------------------
 	return (
 		<>

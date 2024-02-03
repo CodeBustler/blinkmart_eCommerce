@@ -6,25 +6,23 @@ import { routes } from "./router/routes";
 import { auth, fireDB } from "./firebaseConfig/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useSelector } from "react-redux";
-
 // CONTEXT API
 const MyContext = createContext();
-
 // ------------------------------------------------------
 
 function App() {
-  // PRODUCTS & LOADING
+  // PRODUCTS & LOADING ###
   const [loading, setLoading] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
 
-  // USER RELATED
+  // USER RELATED ###
   const [userName, setUserName] = useState("");
   const [admin, setAdmin] = useState(false);
   const [userDB, setUserDB] = useState([]);
   const [userUID, setUserUID] = useState("");
   const [currentUser, setCurrentUser] = useState([]);
 
-  // SEARCH BAR RELATED
+  // SEARCH BAR RELATED ###
   const [searchResult, setSearchResult] = useState([]);
   const [searchError, setSearchError] = useState("Search for products");
 
@@ -32,33 +30,8 @@ function App() {
   const [cartAnimate, setCartAnimate] = useState(false);
   const [itemInCart, setItemInCart] = useState("Add To Cart");
 
-  // UNIVERSAL CART FOR CURRENT USER
+  // UNIVERSAL CART FOR CURRENT USER ###
   const [userCartDetails, setUserCartDetails] = useState([]);
-
-  // HERO SECTION
-  const [bannersData, setBannersData] = useState([]);
-
-  // ------------------------------------------------------
-  // ***************** GET HERO BANNERS *****************
-  // ------------------------------------------------------
-  const getHeroBanners = async () => {
-    setLoading(true);
-
-    try {
-      const snapshot = await getDocs(collection(fireDB, "heroBanners"));
-      const bannersData = snapshot.docs.map((doc) => ({
-        ...doc.data(),
-      }));
-      setBannersData(bannersData);
-    } catch (error) {
-      console.error("Error fetching hero banners:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    getHeroBanners();
-  }, []);
 
   // ------------------------------------------------------
   // ***************** GET ALL PRODUCTS *****************
@@ -203,6 +176,7 @@ function App() {
     <>
       <MyContext.Provider
         value={{
+          // CONTEXT
           allProducts,
           userName,
           setUserName,
@@ -219,14 +193,13 @@ function App() {
           fetchProducts,
           itemInCart, // CARD BTN TEXT
           setItemInCart, // CARD BTN TEXT
-          userCartDetails,
+          userCartDetails, // USER CART
           setUserCartDetails,
-          fetchUserCart,
+          fetchUserCart, // FUNCTION FOR CB
           searchResult,
           setSearchResult,
           searchError,
           setSearchError,
-          bannersData,
         }}
       >
         <RouterProvider router={routes} />

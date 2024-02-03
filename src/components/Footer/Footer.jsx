@@ -10,7 +10,7 @@ import { IoChatbubbles } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { FaAnglesLeft } from "react-icons/fa6";
-// OTHER
+// UTILI
 import { scrollToTop } from "../Utilities/RequiredFunctions";
 // ------------------------------------------------------
 

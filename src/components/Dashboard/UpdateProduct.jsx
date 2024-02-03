@@ -85,6 +85,8 @@ function UpdateProduct() {
 		}
 	};
 
+	// ------------------------------------------------------
+
 	// HANDLE ADD-PRODUCT FORM RESET
 	const handleReset = () => {
 		setProduct({
@@ -106,6 +108,8 @@ function UpdateProduct() {
 
 		setErrorMsg("");
 	};
+
+	// ------------------------------------------------------
 
 	const categoryOptions = [
 		{ value: "electronics_and_devices", label: "Electronics & Devices" },

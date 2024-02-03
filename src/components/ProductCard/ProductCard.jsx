@@ -51,7 +51,7 @@ function ProductCard({ item }) {
 		e.preventDefault();
 		e.target.disabled = true;
 
-		// Prevent multiple clicks while processing
+		// PREVENTS MULTIPLE CLICKS
 		if (isAddingToCart) {
 			return;
 		}

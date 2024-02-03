@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 // ROUTER COMPONENTS
 import { Outlet } from "react-router-dom";
+import TapToTop from "../components/Utilities/TapToTop";
 
 function RootLayout() {
 	return (
@@ -13,6 +14,7 @@ function RootLayout() {
 			<main className="min-h-[55vh]">
 				{/* RENDER NESTED COMPONENTS */}
 				<Outlet />
+				<TapToTop />
 			</main>
 
 			{/* PAGE FOOTER */}

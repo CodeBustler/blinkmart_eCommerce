@@ -8,7 +8,6 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseConfig/firebase";
 import { MyContext } from "../../App";
 import { toastLoginSuccess } from "../utilities/RequiredFunctions";
-
 // ------------------------------------------------------
 
 function Login() {

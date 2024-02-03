@@ -26,7 +26,6 @@ function ProductsTable({ setSearchBarFocus }) {
 	const [searchErrorADMIN, setSearchErrorADMIN] = useState("");
 	const [searchDataADMIN, setSearchDataADMIN] = useState([]);
 	const [searchKeywordADMIN, setSearchKeywordADMIN] = useState("");
-
 	const navigateTo = useNavigate();
 
 	// -------------------------------------------------------

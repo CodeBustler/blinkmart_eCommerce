@@ -11,7 +11,6 @@ import { RiShoppingCartFill } from "react-icons/ri";
 import { IoMdSad } from "react-icons/io";
 import { toast } from "react-toastify";
 import { toastSignUpSuccess } from "../Utilities/RequiredFunctions";
-
 // ---------------------------------------------------------------
 
 function SignUp() {
@@ -74,6 +73,7 @@ function SignUp() {
 			}
 		}
 	};
+	// ---------------------------------------------------------------
 
 	return (
 		<section className="h-[100vh]">
