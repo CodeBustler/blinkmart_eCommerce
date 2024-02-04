@@ -56,6 +56,8 @@ https://blinkmart.netlify.app/
 
 ![App Screenshot](https://i.postimg.cc/tRcvQsw0/bm4.png)
 
+![App Screenshot](https://i.postimg.cc/qMMs0516/bm5.png)
+
 ## Future Plans
 
 In the future, I have plans to enhance and expand BlinkMart eCommerce. Some of the upcoming improvements include:
