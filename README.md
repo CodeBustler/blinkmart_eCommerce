@@ -56,6 +56,18 @@ https://blinkmart.netlify.app/
 
 ![App Screenshot](https://i.postimg.cc/tRcvQsw0/bm4.png)
 
+## Future Plans
+
+In the future, I have plans to enhance and expand BlinkMart eCommerce. Some of the upcoming improvements include:
+
+- **Test Payment Integration:**  
+  Integrate a secure test payment system to simulate transactions and provide users with a more realistic shopping experience.
+
+- **Performance Improvements:**  
+  Implement optimizations to enhance the overall performance of the application. This includes refining loading times, optimizing code, and exploring ways to improve the user experience.
+
+Feel free to check back for updates as these features are implemented and the BlinkMart eCommerce platform evolves!
+
 
 ## 🔗 Connect Me 
 
