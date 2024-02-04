@@ -8,7 +8,6 @@ import {
 
 // LOADER COMPONENT
 import Loader from "../components/Utilities/Loader";
-
 import RootLayout from "./RootLayout";
 
 // -----------------------------------------------------
