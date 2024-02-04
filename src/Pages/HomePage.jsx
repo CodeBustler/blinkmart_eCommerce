@@ -6,6 +6,15 @@ import ContainerForCard from "../components/ProductCard/ContainerForCard";
 import ProductCard from "../components/ProductCard/ProductCard";
 // UTILITIES
 import ImageSlider from "../components/Utilities/ImageSlider";
+import ProductsSlider from "../components/Utilities/ProductsSlider";
+import hero1 from "../assets/desktop_hero/hero1.jpg";
+import hero2 from "../assets/desktop_hero/hero2.jpg";
+import hero3 from "../assets/desktop_hero/hero3.jpg";
+import hero4 from "../assets/desktop_hero/hero4.jpg";
+import mHero1 from "../assets/mobile_hero/mHero1.png";
+import mHero2 from "../assets/mobile_hero/mHero2.png";
+import mHero3 from "../assets/mobile_hero/mHero3.png";
+
 // ------------------------------------------------
 
 function HomePage() {
@@ -37,11 +46,22 @@ function HomePage() {
 	const jewellerySilver = filterProductsBySubCategory("jewellery_silver");
 	// ------------------------------------------------
 
+	const images = [hero1, hero2, hero3, hero4];
+	const mobileImages = [mHero1, mHero2, mHero3];
+
 	return (
 		<div className="bg-gray-200">
-			<ImageSlider />
+			<div className="hidden md:block">
+				<ImageSlider images={images} />
+			</div>
+			<div className="md:hidden">
+				<ProductsSlider />
+			</div>
+			<div className="md:hidden">
+				<ImageSlider images={mobileImages} />
+			</div>
 			{/*MAIN CONTAINER */}
-			<div className="container mx-auto relative -top-36">
+			<div className="container mx-auto relative md:-top-36">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
 					<CategoryContainer title={"Mobiles"} category={mobiles} />
 					<CategoryContainer
@@ -66,8 +86,8 @@ function HomePage() {
 					containerTitle={"Smart Watches"}
 					filterProducts={"smart_watches"}
 				>
-					{smartwatches.reverse().map((item) => (
-						<ProductCard item={item} />
+					{smartwatches.reverse().map((item, index) => (
+						<ProductCard item={item} key={index} />
 					))}
 				</ContainerForCard>
 			</div>
@@ -106,8 +126,8 @@ function HomePage() {
 					containerTitle={"Devotional Books"}
 					filterProducts={"books_devotional"}
 				>
-					{devotionalBooks.reverse().map((item) => (
-						<ProductCard item={item} />
+					{devotionalBooks.reverse().map((item, index) => (
+						<ProductCard item={item} key={index} />
 					))}
 				</ContainerForCard>
 			</div>

@@ -10,9 +10,11 @@ import {
 import Loader from "../components/Utilities/Loader";
 
 import RootLayout from "./RootLayout";
-import HomePage from "../Pages/HomePage";
 
-// LAZY LOAD COMPONENTS & PAGES
+// -----------------------------------------------------
+// ****************LAZY IMPORTS *********************
+// -----------------------------------------------------
+const HomePage = lazy(() => import("../Pages/HomePage"));
 const ProductDetail = lazy(
 	() => import("../components/Products/ProductDetail"),
 );
@@ -38,7 +40,12 @@ const SearchProducts = lazy(
 	() => import("../components/Products/SearchProducts"),
 );
 
+// -----------------------------------------------------
+// *************** PROTECTED ROUTES *******************
+// -----------------------------------------------------
+
 // PROTECTED ROUTE FOR USER
+// -----------------------------------------------------
 const ProtectedRoute = ({ children }) => {
 	const userLocal = localStorage.getItem("user");
 	if (userLocal) {
@@ -49,6 +56,7 @@ const ProtectedRoute = ({ children }) => {
 };
 
 // PROTECTED ROUTE FOR ADMIN DASHBOARD
+// -----------------------------------------------------
 const env = import.meta.env;
 const adminEmail = env.VITE_REACT_APP_ADMIN_EMAIL;
 const ProtectedRouteForAdmin = ({ children }) => {
@@ -60,6 +68,7 @@ const ProtectedRouteForAdmin = ({ children }) => {
 		return <Navigate to={"/login"} />;
 	}
 };
+// -----------------------------------------------------
 
 const routes = createBrowserRouter(
 	createRoutesFromElements(
