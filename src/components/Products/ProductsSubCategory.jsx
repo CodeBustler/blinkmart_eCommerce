@@ -26,7 +26,6 @@ function ProductsSubCategory() {
 		setSubCategoryItems(filterSubCategoryItems);
 		scrollToTop();
 	}, [allProducts, subCategoryName]);
-	console.log(subCategoryItems.map((p) => console.log(p.price)));
 
 	// ------------------------------------------------------
 	//  ************ HANDLE SORTING BY PRICE *************

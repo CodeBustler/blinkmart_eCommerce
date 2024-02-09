@@ -50,7 +50,6 @@ function ProductDetail() {
 			(item) => item.id === productId,
 		);
 
-		console.log(filterProduct.length);
 		if (filterProduct.length > 0) {
 			setDisplayProduct(filterProduct[0]);
 			setMainImage(filterProduct[0].img1);

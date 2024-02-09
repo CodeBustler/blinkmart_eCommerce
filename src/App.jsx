@@ -16,7 +16,7 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
 
   // USER RELATED ###
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(null);
   const [admin, setAdmin] = useState(false);
   const [userDB, setUserDB] = useState([]);
   const [userUID, setUserUID] = useState("");

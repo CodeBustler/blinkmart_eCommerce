@@ -47,6 +47,7 @@ const SearchProducts = lazy(
 // -----------------------------------------------------
 const ProtectedRoute = ({ children }) => {
 	const userLocal = localStorage.getItem("user");
+
 	if (userLocal) {
 		return children;
 	} else {
@@ -73,7 +74,7 @@ const routes = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
 			<Route
-				path="/"
+				path=""
 				element={
 					<Suspense fallback={<Loader />}>
 						<RootLayout />
@@ -157,6 +158,7 @@ const routes = createBrowserRouter(
 					}
 				/>
 			</Route>
+			{/*OUTSIDE ROOT LAYOUT*/}
 			<Route
 				path="/*"
 				element={

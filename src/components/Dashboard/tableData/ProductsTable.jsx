@@ -81,8 +81,6 @@ function ProductsTable({ setSearchBarFocus }) {
 		};
 	}, [searchKeywordADMIN, allProducts]);
 
-	console.log(searchDataADMIN);
-
 	// ----------------------------------------------------------------
 	//  **************** DELETE PRODUCT FROM FIREBASE ****************
 	// ----------------------------------------------------------------
