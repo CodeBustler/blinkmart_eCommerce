@@ -97,7 +97,7 @@ const ImageSlider = ({ images }) => {
                 ))}
                 <button
                     onClick={goToNext}
-                    className="text-white text-3xl hover:bg-transparent  hover:bg-black hover:bg-opacity-10 p-3 focus:outline-none h-full z-10"
+                    className="text-white text-3xl  hover:bg-black hover:bg-opacity-10 p-3 focus:outline-none h-full z-10"
                 >
                     &#8250;
                 </button>
