@@ -79,7 +79,7 @@ Feel free to check back for updates as these features are implemented and the Bl
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mallikarjun-mavnoor/)
 
-[![INSTAGRAM](https://img.shields.io/badge/instagram-D62976?style=for-the-badge&logo=instagram&logoColor=white)](https://twitter.com/CodeBustler)
+[![INSTAGRAM](https://img.shields.io/badge/instagram-D62976?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/CodeBustler)
 
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/CodeBustler)
 
